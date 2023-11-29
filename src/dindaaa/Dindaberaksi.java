@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package dindaaa;
-
+import java.util.Scanner;
 /**
  *
  * @author HP
@@ -13,35 +13,49 @@ public class Dindaberaksi {
     
     public static void main(String [] args){
         
+        String N;
+        int U, T, B;
+        Scanner keyboard = new Scanner(System.in);
+        
+        System.out.print("Siapa Nama Anda : ");
+        N = keyboard.nextLine();
+        
+        System.out.print("Berapa Umur Anda : ");
+        U = keyboard.nextInt();
+        
+        System.out.print("Masukkan Tinggi : ");
+        T = keyboard.nextInt();
+        
+        System.out.print("Masukkan Berat : ");
+        B = keyboard.nextInt();
+        
             Dindaaa kalkulator = new Dindaaa();
             
-            String nama;
-            nama = "Adrian";
             
-            int umur;
-            umur = 23;
             
-            int T = 166;
-            int B = 150;
+            
             kalkulator.setTinggi((int) T);
             kalkulator.setBerat ((int) B);
-            float C = (float)(kalkulator.getTotal());
+            float TOTAL = (float)(kalkulator.getTotal());
             
+            System.out.println();
             System.out.println("KALKULATOR BMI DINDA");
             System.out.println("____________________");
-            System.out.println("Nama : " + nama);
-            System.out.println("Umur : " + umur);
-            System.out.println("Tinggi badan : " + T);
-            System.out.println("Berat Badan : " + B);
-            System.out.println("Hasil = " + Math.ceil(kalkulator.getTotal()));
+            System.out.println("Nama : " + N);
+            System.out.println("Umur : " + U);
+            System.out.println();
+            System.out.println("Tinggi badan : " + T + "cm");
+            System.out.println("Berat badan : " + B + "kg");
+            System.out.println("____________________");
+            System.out.println("Total :" + TOTAL);
             
-            if(C==0){
-            System.out.println("Anda belum meng-input hasil data stunting anda");
-            }else if(C<=18.5){
+            if(TOTAL==0){
+            System.out.println("DATA ANDA TIDAK ADA");
+            }else if(TOTAL<=18.5){
             System.out.println("MAAF ANDA KEKURANGAN BERAT BADAN");
-            }else if(C<=24.9){
+            }else if(TOTAL<=24.9){
             System.out.println("SELAMAT ANDA DI BATAS BERAT BADAN IDEAL");
-            }else if(C<=29.9){
+            }else if(TOTAL<=29.9){
             System.out.println("MAAF ANDA MEMPUNYAI BERAT BADAN YANG BERLEBIH");
             }else{
             System.out.println("ANDA OBESITAS, SARAN DARI KAMI UNTUK SEGERA BERKONSULTASI");
